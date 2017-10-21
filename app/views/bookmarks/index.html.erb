@@ -1,0 +1,26 @@
+<h1 class="jumbotron">Your Bookmarks</h1>
+
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <th>Page</th>
+      <th>Description</th>
+      <th colspan = "3"></th>
+    </thead>
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.page %></td>
+        <td><%= bookmark.description %></td>
+        <td><%= link_to "Show", book_bookmark_path(@book, bookmark) %> </td>
+        <td><%= link_to "Edit", edit_book_bookmark_path(@book, bookmark) %> </td>
+        <td><%= link_to "Remove", book_bookmark_path(@book, bookmark), method: :delete %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Add a bookmark", new_book_bookmark_path %>
+
+</div>
