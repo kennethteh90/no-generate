@@ -1,0 +1,13 @@
+<h1 class="jumbotron">Add a bookmark!</h1>
+
+<div class="container">
+
+  <%= simple_form_for [@book, @bookmark] do |f| %>
+    <%= f.input :page %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <%= link_to "Back to book", book_bookmarks_path %>
+
+</div>
