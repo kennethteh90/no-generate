@@ -71,15 +71,3 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-
-version: 2
-jobs:
-  build:
-    working_directory: ~/appName
-    docker:
-      - image: ruby:2.3.1
-        environment:
-        - PG_HOST=localhost
-        - PG_USER=ubuntu
-        - RAILS_ENV=test
-        - RACK_ENV=test
